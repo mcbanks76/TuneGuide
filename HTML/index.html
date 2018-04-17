@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>TuneGuide</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Find Your New Favorite Song or Artist with TuneGuide!">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+	<link href="main.css" rel="stylesheet" type="text/css">
+	<link href="float-grid.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="index.js"></script>
+</head>
+
+<body>
+	<header role="banner" class="navbar">
+		<div class="bannertext">
+			<h1>TuneGuide</h1>
+		</div>
+	</header>
+
+	<section role="region" class="js-start-container hidden">
+		<div class="start-page-text">
+        	<h2>In a music rut? Feel like expanding your listening horizons?</h2>
+        	<p>Let <span>TuneGuide</span>introduce you to FIVE NEW bands based on your personal taste.</p>
+        <button type="button" class="startButton">Click Here to Find Your Next Favorite Artist</button>
+      </div>
+   </section>
+
+	<main role ="main" class ="js-search-container">
+   	<h3>Enter the name of a band or artist you already like below, and receive recommendations based on your preferences:</h3>
+          <form action="#" class="js-search-form">
+            <label for="query"></label>
+            <input type="text" class="js-query">
+            <button type="submit">Search</button>
+          </form>
+      <h2>Results</h2>
+      <section role ="main" class="js-search-results" aria-live="assertive">
+          </section>
+   </main>
+    </body>
+</html>
+
+</body>
+</html>
