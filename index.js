@@ -1,7 +1,8 @@
 'use strict'
+
 const TASTEDIVE_SEARCH_URL = "https://tastedive.com/api/similar";
 
-function getDataFromApi(searchTerm, callback) {
+function getDataFromAPI(searchTerm, callback) {
   const settings = {
     url: TASTEDIVE_SEARCH_URL,
     data: {
@@ -19,19 +20,46 @@ function getDataFromApi(searchTerm, callback) {
   $.ajax(settings);
 }
 
-function renderResult(result) {
-  console.log(result);
- return `<div>
-      <h4>
-      <span class="js-result-name">${result.Name}</span></h4>
-      <p>${result.wTeaser}></br></p>
-    </div>
-  `;
 
+function handleAppStart() {
+  $('.js-start-container').on('click', '.startButton', function(event) {
+    $('.js-start-container').hide();
+    $('.js-search-container, .js-search-results, .js-menu').removeClass('hidden');
+  });
 }
 
+function handleSearchRestart() {
+  $('.js-menu').on('click', '.js-restart-search', function(event) {
+    console.log ("navbar link clicked!");
+    /*$('.js-start-container').hide();
+    $('.js-search-container, .js-search-results').removeClass('hidden');*/
+  });
+}
+
+function renderResult(result) {
+  return `
+  <div id="js-accordion-results" class="js-results">
+    <h4>Artist: ${result.Name}</h4>
+
+    <button class="accordion">Artist Bio:</button>
+      <div class="js-bio panel">
+        <p>${result.wTeaser}</p>
+      </div>
+
+    <button class="accordion">Listen:</button>
+      <div class="js-video panel">
+        <p>${result.yUrl}</p>
+      </div>
+
+    <button class="accordion"> More Info:</button>
+      <div class="js-info panel">
+          <p><a href="${result.wUrl}" target="_blank">Wiki</a></p>
+    </div>
+  `;
+}
+
+
 function displayTasteDiveSearchData(data) {
-  console.log("search data function loaded!");
   const results = data.Similar.Results.map((item, index) => renderResult(item));
   $('.js-search-results').html(results);
 }
@@ -43,8 +71,15 @@ function watchSubmit() {
     const query = queryTarget.val();
     // clear out the input
     queryTarget.val("");
-    getDataFromApi(query, displayTasteDiveSearchData)
+    getDataFromAPI(query, displayTasteDiveSearchData);
+    $('.js-selected-artist').removeClass('hidden');
   });
 }
 
-$(watchSubmit);
+function createApp() {
+  watchSubmit();
+  handleAppStart();
+  handleSearchRestart();
+}
+
+$(createApp);

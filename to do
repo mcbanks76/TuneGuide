@@ -1,0 +1,35 @@
+List of Things to Do:
+
+Function:
+For Results
+	Display link to youtube video
+	Handle click on choice for information
+
+	Display link to more information
+	return errors for no search results
+	return errors for incomplete search results
+
+Point navbar links to correct page
+
+
+Styling:
+Choose a background image for home page
+Choose a color scheme for app
+Choose a styling template for app
+Choose a 
+
+
+Accessibility:
+Implement ARIA live on app
+Implement A11y in HTML tags
+
+Responsive Design:
+Implement Grid css
+Implement media queries for app screen size
+
+Git Commit:
+Sort out Files on tune-guide
+
+
+
+
