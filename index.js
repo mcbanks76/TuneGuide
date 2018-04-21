@@ -38,30 +38,43 @@ function handleSearchRestart() {
 
 function renderResult(result) {
   return `
-  <div id="js-accordion-results" class="js-results">
-    <h4>Artist: ${result.Name}</h4>
+  <h4>Artist: ${result.Name}</h4></br>
+  <div class = "accordion">
 
-    <button class="accordion">Artist Bio:</button>
+    <h5>Listen:</h5>
+      <div class="js-video panel">
+        <iframe width="420" height="315"src="${result.yUrl}?controls=1" alt>
+        </iframe>
+      </div>
+
+    <h5>Artist Bio:</h5>
       <div class="js-bio panel">
         <p>${result.wTeaser}</p>
       </div>
 
-    <button class="accordion">Listen:</button>
-      <div class="js-video panel">
-        <p>${result.yUrl}</p>
-      </div>
-
-    <button class="accordion"> More Info:</button>
+    <h5> More Info:</h5>
       <div class="js-info panel">
           <p><a href="${result.wUrl}" target="_blank">Wiki</a></p>
-    </div>
+      </div>
+  </div>
   `;
 }
 
-
 function displayTasteDiveSearchData(data) {
   const results = data.Similar.Results.map((item, index) => renderResult(item));
-  $('.js-search-results').html(results);
+  if (results.length != 0) {
+    $('.js-search-results').html(results);
+    
+    $('.accordion').accordion({
+      collapsible: true
+    });
+
+    $('.accordion').accordion( "option", "active", false);
+  }
+
+  else {
+     $('.js-search-results').html("<p> Sorry! No Results Found. Please Search Again.</p>");
+  }  
 }
 
 function watchSubmit() {
@@ -82,4 +95,7 @@ function createApp() {
   handleSearchRestart();
 }
 
-$(createApp);
+$( function() {
+
+  createApp();
+});

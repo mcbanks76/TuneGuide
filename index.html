@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Find Your New Favorite Song or Artist with TuneGuide!">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link href="main.css" rel="stylesheet" type="text/css">
 	<link href="float-grid.css" rel="stylesheet" type="text/css">
 </head>
@@ -35,15 +36,16 @@
             <input type="text" class="js-query">
             <button type="submit">Recommend Away!</button>
         </form>
-    
+
       <section role="region" class="js-selected-artist hidden col-12" aria-live="assertive">
-      	<p> Your Recommended Artists:</p>
       </section>
 
 		<section role="region" class="js-search-results hidden col-12" aria-live="assertive">
       </section>
+
     </main>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="index.js"></script> 	
 </body>
 </html>

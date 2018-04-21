@@ -1,44 +1,9 @@
 body	{
 	box-sizing: border-box;
 	text-align: center;
+	/*background: url("https://www.publicdomainpictures.net/pictures/140000/velka/stack-of-old-45-rpm-records.jpg") no-repeat center;
+	background-size: cover;*/
 }
-
-/*button.accordion {
-  background-color: #CBF1F5;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: solid 1px #3CF;
-  text-align: left;
-  outline: none;
-  font-size: 18px;
-  transition: 0.4s;
-  font-weight: 600;
-}
-button.accordion.active,
-button.accordion:hover {
-  background-color: #E1F7FB;
-}
-button.accordion:after {
-  content: '\25bc';
-  font-size: 13px;
-  color: #777;
-  float: right;
-  margin-left: 5px;
-}
-button.accordion.active:after {
-  content: "\25b2";
-  color: #FFF;
-}
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: 0.6s ease-in-out;
-  opacity: 0;
-}*/
 
 .hidden	{
 	display: none;
