@@ -20,30 +20,30 @@ function getDataFromAPI(searchTerm, callback) {
   $.ajax(settings);
 }
 
-
 function handleAppStart() {
   $('.js-start-container').on('click', '.startButton', function(event) {
     $('.js-start-container').hide();
-    $('.js-search-container, .js-search-results, .js-menu').removeClass('hidden');
+    $('.js-search-container, .js-search-results, .navbar').removeClass('hidden');
   });
 }
 
 function handleSearchRestart() {
   $('.js-menu').on('click', '.js-restart-search', function(event) {
     console.log ("navbar link clicked!");
-    /*$('.js-start-container').hide();
-    $('.js-search-container, .js-search-results').removeClass('hidden');*/
+    $('.js-search-results, .js-selected-artist').empty();
   });
 }
 
 function renderResult(result) {
   return `
+  <p class="result-description"> You have good taste! Based on your selection, here are your five recommendations:</p>
+
   <h4>Artist: ${result.Name}</h4></br>
   <div class = "accordion">
 
     <h5>Listen:</h5>
-      <div class="js-video panel">
-        <iframe width="420" height="315"src="${result.yUrl}?controls=1" alt>
+      <div class="js-video panel">?controls=1
+      <iframe width="420" height="315"src="${result.yUrl}" title="Video Link">
         </iframe>
       </div>
 
@@ -58,6 +58,16 @@ function renderResult(result) {
       </div>
   </div>
   `;
+}
+
+function renderSearchResult(result) {
+return `
+<p> You Selected: ${result.Name}</p></br>`
+}
+
+function displayUserSearchData(data) {
+  const searchData = data.Similar.Info.map((item, index) => renderSearchResult(item));
+  $('.js-selected-artist').html(searchData);
 }
 
 function displayTasteDiveSearchData(data) {
@@ -84,8 +94,8 @@ function watchSubmit() {
     const query = queryTarget.val();
     // clear out the input
     queryTarget.val("");
+    getDataFromAPI(query, displayUserSearchData);
     getDataFromAPI(query, displayTasteDiveSearchData);
-    $('.js-selected-artist').removeClass('hidden');
   });
 }
 
