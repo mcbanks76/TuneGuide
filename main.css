@@ -16,6 +16,9 @@ html	{
    	rgba(0, 0, 0, .6)
     ),
    url(http://www.imposemagazine.com/wp-content/uploads/2014/12/best-records.jpg);
+   bottom: 0;
+   overflow-y: scroll; 
+   overflow-x: scroll;
 }
 
 .navbar	{
@@ -26,7 +29,7 @@ html	{
 	top: 0;
 }
 
-nav	{
+/*nav	{
 	display: inline-block;
 	list-style: none;
 	color: white;
@@ -39,7 +42,7 @@ nav li {
 
 a   {
 	text-decoration: none;
-}
+}*/
 
 .js-video-panel	{
 	display: block;
@@ -53,13 +56,9 @@ a   {
 	}
 
 	.video {
-		max-height: 65%;
-		max-width: 65%;
+		max-height: 75%;
+		max-width: 80%;
 
-	}
-
-	.js-selected-artist, .js-search-results	{
-		max-width: 70%;
 	}
 }
 
@@ -73,10 +72,6 @@ a   {
 		max-height: 90%;
 		max-width: 90%;
 
-	}
-
-	.js-selected-artist, .js-search-results	{
-		max-width: 85%;
 	}
 }
 
@@ -102,7 +97,7 @@ a   {
 }
 
 .ui-accordion-header.ui-state-active { 
-	background-color: ;
+	background-color:  ;
 	color: white; 
 }
 
