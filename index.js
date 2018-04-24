@@ -23,7 +23,7 @@ function getDataFromAPI(searchTerm, callback) {
 function handleAppStart() {
   $('.js-start-container').on('click', '.startButton', function(event) {
     $('.js-start-container').hide();
-    $('.js-search-container, .js-search-results, .navbar').removeClass('hidden');
+    $('.js-search-container, .navbar').removeClass('sr-only');
   });
 }
 
@@ -36,8 +36,6 @@ function handleSearchRestart() {
 
 function renderResult(result) {
   return `
-  <p class="result-description"> You have good taste! Based on your selection, here are your five recommendations:</p>
-
   <h4>Artist: ${result.Name}</h4></br>
   <div class = "accordion">
 
@@ -62,7 +60,11 @@ function renderResult(result) {
 
 function renderSearchResult(result) {
 return `
-<p> You Selected: ${result.Name}</p></br>`
+<p> You Chose:</p></br>
+
+<p class="result-name">${result.Name}</p></br>
+
+<p class="result-description"> You have good taste! Based on your selection, here are your recommendations:</p>`
 }
 
 function displayUserSearchData(data) {
