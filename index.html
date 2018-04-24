@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>TuneGuide</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Find Your New Favorite Song or Artist with TuneGuide!">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link href="main.css" rel="stylesheet" type="text/css">
+	<link href="float-grid.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<header role="banner" class="navbar sr-only">
+		<h1>TuneGuide</h1>
+			<nav class="menu js-menu">
+				<ul>
+  					<li class="js-restart-search"><a href="#home">New Search</a></li>
+				</ul>
+			</nav>
+		</header>
+
+	<section role="region" class="start-container js-start-container row">
+		<div class="start-page-text">
+      	<h2> TuneGuide - Find New Bands to Love in Seconds</h2></br>
+      	<p>In a music rut? Feel like expanding your listening horizons?<p>
+        	<p>Let <span class="span-Title">TuneGuide</span> introduce you to up to FIVE new bands based on your personal taste.</p>
+      	<button type="button" class="startButton">Find Your Next Favorite Artist Here</button>
+      </div>
+   </section>
+
+	<main role ="main" class ="js-search-container row sr-only">
+   		<h3>Enter the name of a band or artist you're already into, and see what else might sound good to you.</h3>
+         <form action="#" class="js-search-form">
+            <label for="query"></label></br>
+            <input type="text" class="js-query">
+            <button type="submit">Recommend Away!</button>
+        </form>
+
+      	<section role="region" class="js-selected-artist col-12 sr-only" aria-live="polite">
+      	</section>
+
+		<section role="region" class="js-search-results col-12 sr-only" aria-live="polite">
+      	</section>
+    </main>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="index.js"></script> 	
+
+
+</body>
+</html>
