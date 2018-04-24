@@ -23,12 +23,12 @@ function getDataFromAPI(searchTerm, callback) {
 function handleAppStart() {
   $('.js-start-container').on('click', '.startButton', function(event) {
     $('.js-start-container').hide();
-    $('.js-search-container, .navbar').removeClass('sr-only');
+    $('.js-search-container, .js-search-results, .js-selected-artist, .navbar').removeClass('sr-only');
   });
 }
 
 function handleSearchRestart() {
-  $('.js-menu').on('click', '.js-restart-search', function(event) {
+ $('.js-menu').on('click', '.js-restart-search', function(event) {
     console.log ("navbar link clicked!");
     $('.js-search-results, .js-selected-artist').empty();
   });
@@ -40,8 +40,8 @@ function renderResult(result) {
   <div class = "accordion">
 
     <h5>Listen:</h5>
-      <div class="js-video panel">?controls=1
-      <iframe width="420" height="315"src="${result.yUrl}" title="Video Link">
+      <div class="js-video panel">
+        <iframe class="video" width="420" height="315" src="${result.yUrl}" title="Video Link">
         </iframe>
       </div>
 
@@ -60,11 +60,11 @@ function renderResult(result) {
 
 function renderSearchResult(result) {
 return `
-<p> You Chose:</p></br>
+<p> You Chose:</p>
 
 <p class="result-name">${result.Name}</p></br>
 
-<p class="result-description"> You have good taste! Based on your selection, here are your recommendations:</p>`
+<p class="result-description">Based on your selection, here are your recommendations:</p>`
 }
 
 function displayUserSearchData(data) {
@@ -82,6 +82,8 @@ function displayTasteDiveSearchData(data) {
     });
 
     $('.accordion').accordion( "option", "active", false);
+  
+    $( ".selector" ).accordion("option", "heightStyle", "content");
   }
 
   else {

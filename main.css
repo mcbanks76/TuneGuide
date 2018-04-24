@@ -1,14 +1,119 @@
-body	{
-	box-sizing: border-box;
+*	{
 	text-align: center;
-	/*background: url("https://www.publicdomainpictures.net/pictures/140000/velka/stack-of-old-45-rpm-records.jpg") no-repeat center;
-	background-size: cover;*/
+	font-family: 'Roboto Mono', monospace;
+}
+
+html	{ 
+  background: url(http://www.imposemagazine.com/wp-content/uploads/2014/12/best-records.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+  background-image: 
+  	linear-gradient(
+   	rgba(0, 0, 0, .6),
+   	rgba(0, 0, 0, .6)
+    ),
+   url(http://www.imposemagazine.com/wp-content/uploads/2014/12/best-records.jpg);
+}
+
+.navbar	{
+	width: 100%;
+  	height: 60px;
+  	text-align: center;
+	margin: 0 auto;
+	top: 0;
+}
+
+nav	{
+	display: inline-block;
+	list-style: none;
+	color: white;
+}
+
+nav li {
+	display: inline-block;
+	color: white;
+}
+
+a   {
+	text-decoration: none;
+}
+
+.js-video-panel	{
+	display: block;
+	margin: 0 auto;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	body	{
+		font-size:.75em;
+	}
+
+	.video {
+		max-height: 65%;
+		max-width: 65%;
+
+	}
+
+	.js-selected-artist, .js-search-results	{
+		max-width: 70%;
+	}
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+	body	{
+		font-size:.85em;
+	}
+
+	.video {
+		max-height: 90%;
+		max-width: 90%;
+
+	}
+
+	.js-selected-artist, .js-search-results	{
+		max-width: 85%;
+	}
+}
+
+.start-container	{
+	top: 60px;
+}
+.start-container, .js-search-container {
+  	position: relative;
+  	display: inline-block;
+  	height: 450px;
+  	max-width: 500px;
+  	margin: auto;
+	text-align: center;
+}
+
+.js-search-container {
+	top: 100px;
+}
+
+.ui-accordion-header { 
+	background-color: grey; 
+	color: white;
+}
+
+.ui-accordion-header.ui-state-active { 
+	background-color: ;
+	color: white; 
 }
 
 .sr-only {
-  position: absolute;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+	position: absolute;
+	left: -10000px;
+	width: 1px;
+	height: 1px;
+  	overflow: hidden;
+}
+
+.hidden	{
+	display: none;
 }
