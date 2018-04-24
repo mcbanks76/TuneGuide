@@ -12,8 +12,8 @@ HTML/CSS/JavaScript/JQuery
 
 Screenshots:</br>
 
-Landing Page:</br>
+Landing Page: https://github.com/mcbanks76/TuneGuide/blob/master/Screenshot%20(3).png?raw=true</br>
 
-Search Bar:</br>
+Search Page: https://github.com/mcbanks76/TuneGuide/blob/master/Screenshot%20(5).png?raw=true </br>
 
-Sample Results: </br>
+Sample Results: https://github.com/mcbanks76/TuneGuide/blob/master/Screenshot%20(6).png?raw=true</br>
